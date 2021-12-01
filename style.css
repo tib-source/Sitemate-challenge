@@ -1,0 +1,74 @@
+
+:root{ 
+    --background: #FAEDF0;
+    --body: #EC255A ;
+    --shadow: #292C6D;
+}
+
+*{
+    box-sizing: border-box;
+}
+body,html{ 
+    padding: 0;
+    margin: 0;
+    font-family:"Courier New" ;
+    position: relative;
+}
+
+
+
+.container{ 
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.button{ 
+    all: unset;
+    padding: 0.5rem 1rem;
+    background: var(--body);
+    color: white;
+    border-radius: 0.2rem;
+    box-shadow: 2px 2px 1px var(--shadow);
+    opacity: 0.9;
+    transition: 400ms;
+    cursor: pointer;
+}
+
+.button:hover{ 
+    opacity: 1;
+    transform: scale(1.05)
+}
+
+.button:active{ 
+    transform: scale(1.02)
+}
+
+
+.modal{ 
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.397);
+}
+
+.modal__wrapper{ 
+    padding: 2rem;
+    width: min(80%, 500px);
+    height: 400px;
+    background: var(--background);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    border-radius: 1rem;
+    box-shadow: 3px 3px 1px;
+
+}
