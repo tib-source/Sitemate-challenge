@@ -1,3 +1,4 @@
+// variable definition
 const modalHtml = `
         <div class="modal__wrapper">
             <p>Are you sure you want to continue</p>
@@ -14,22 +15,38 @@ modalContainer.innerHTML = modalHtml
 let showModal = false
 const bodyButton = document.getElementById('click')
 
-
+// event handle functions
 const toggleModal = () => {
     showModal = !showModal
 }
 
-
 const handleModal = () => {
     toggleModal()
-    console.log("meow")
     if (showModal) {
         document.body.appendChild(modalContainer)
+        const modalButtons = document.querySelectorAll('.modal__buttons button')
+        modalButtons.forEach(button => {
+            console.log(button)
+            button.addEventListener('click', handleModalButton)
+        })
     } else {
+        const modalButtons = document.querySelectorAll('.modal__buttons button')
+        modalButtons.forEach(button =>
+            button.removeEventListener('click', handleModalButton))
         document.body.removeChild(modalContainer)
     }
 }
-bodyButton.addEventListener("click", handleModal)
 
+const handleModalButton = (event) => {
+    const clicked = document.querySelector('.clicked')
+    console.log(clicked)
+    clicked.innerHTML = `You clicked the ${event.target.innerHTML} button`
+    document.querySelector('.container')
+    handleModal()
+}
+
+
+// event listener
+bodyButton.addEventListener("click", handleModal)
 
 

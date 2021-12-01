@@ -3,6 +3,7 @@
     --background: #FAEDF0;
     --body: #EC255A ;
     --shadow: #292C6D;
+    --font: #161853;
 }
 
 *{
@@ -23,13 +24,16 @@ body,html{
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-flow: column;
+    gap: 1rem;
 }
 
 .button{ 
+    font-weight: 700;
     all: unset;
     padding: 0.5rem 1rem;
     background: var(--body);
-    color: white;
+    color: var(--font);
     border-radius: 0.2rem;
     box-shadow: 2px 2px 1px var(--shadow);
     opacity: 0.9;
@@ -47,7 +51,8 @@ body,html{
 }
 
 
-.modal{ 
+.modal{
+    transition: 100ms;
     position: absolute;
     top: 0;
     left: 0;
