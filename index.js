@@ -42,7 +42,7 @@ const handleModal = () => {
 const handleModalButton = (event) => {
     const clicked = document.querySelector('.clicked')
     console.log(clicked)
-    clicked.innerHTML = `You clicked the ${event.target.innerHTML} button`
+    clicked.innerHTML = `You clicked the "${event.target.innerHTML}" button`
     document.querySelector('.container')
     handleModal()
 }
