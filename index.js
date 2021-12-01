@@ -24,12 +24,14 @@ const handleModal = () => {
     toggleModal()
     if (showModal) {
         document.body.appendChild(modalContainer)
+        setTimeout(() => document.querySelector('.modal__wrapper').classList.add('active'), 100)
         const modalButtons = document.querySelectorAll('.modal__buttons button')
         modalButtons.forEach(button => {
             console.log(button)
             button.addEventListener('click', handleModalButton)
         })
     } else {
+        document.querySelector('.modal__wrapper').classList.remove('active')
         const modalButtons = document.querySelectorAll('.modal__buttons button')
         modalButtons.forEach(button =>
             button.removeEventListener('click', handleModalButton))
